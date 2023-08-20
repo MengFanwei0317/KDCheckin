@@ -183,9 +183,9 @@ W2PJ:
     send: 0
     cookies:
         - user:
-            name: ''
+            name: 'MengFanwei'
             # htVC_2132_saltkey, htVC_2132_auth
-            cookie: ''
+            cookie: 'htVC_2132_saltkey=Rd2aOAKD;htVC_2132_auth=e00cY1q2RazBh735hPJ0YJNPbZm7U8EHvca%2BLM%2BwoQBUKSrlkfWa%2F21I0Z2MM1uhJBDsf62Ilwca63WTE4GLBeJMe5WY'
 
 # 天气预报
 Weather:

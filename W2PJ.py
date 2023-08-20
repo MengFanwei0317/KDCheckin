@@ -8,6 +8,8 @@ import requests, sys, re, traceback
 from io import StringIO
 from bs4 import BeautifulSoup
 from KDconfig import getYmlConfig, send
+import os
+os.environ['NO_PROXY'] = 'www.52pojie.cn'
 
 class W2PJ:
     def __init__(self, cookie):
@@ -22,7 +24,7 @@ class W2PJ:
             print("请配置Cookie再试试")
             self.sio.write("请配置Cookie再试试\n")
             return
-        requests.utils.add_dict_to_cookiejar(session.cookies, {item.split("=")[0]: item.split("=")[1] for item in self.cookie.split("; ")})
+        requests.utils.add_dict_to_cookiejar(session.cookies, {item.split("=")[0]: item.split("=")[1] for item in self.cookie.split(";")})
         session.headers.update({"Referer": "https://www.52pojie.cn/home.php?mod=task&do=draw&id=2&referer=%2F"})
         session.headers.update({"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.135 Safari/537.36"})
         res = session.get(url="https://www.52pojie.cn/home.php?mod=task&do=apply&id=2&referer=%2F")
