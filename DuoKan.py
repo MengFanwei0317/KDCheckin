@@ -6,6 +6,9 @@ new Env('多看阅读');
 import requests, time, sys, traceback
 from io import StringIO
 from KDconfig import getYmlConfig, send
+import os
+os.environ['NO_PROXY'] = 'www.duokan.com'
+
 
 
 class DuoKan:
@@ -226,7 +229,12 @@ class DuoKan:
             "1BJGW140U5",
         ]
         self.headers = {
-            "Content-Type": "application/x-www-form-urlencoded; charset=utf-8"}
+            "Accept-Encoding": "gzip,deflate",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36 Edg/115.0.1901.203",
+            "Content-Type": "application/x-www-form-urlencoded; charset=utf-8",
+            "Upgrade-Insecure-Requests": "1",
+            "Accept-Language":"zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6"
+        }
 
     @staticmethod
     def get_data(cookies):
@@ -393,7 +401,7 @@ class DuoKan:
                 print(f'{self.name} 开始签到...')
                 cookies = {
                     item.split("=")[0]: item.split("=")[1]
-                    for item in self.cookie.split("; ")
+                    for item in self.cookie.split(";")
                 }
                 # 签到
                 sign_msg = self.sign(cookies)

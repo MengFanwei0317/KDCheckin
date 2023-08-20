@@ -7,6 +7,8 @@ new Env('百度贴吧');
 import requests, time, re, json, sys, traceback, hashlib
 from io import StringIO
 from KDconfig import getYmlConfig, send
+import os
+os.environ['NO_PROXY'] = 'zhidao.baidu.com'
 
 class BDTieBa:
     def __init__(self, cookie):
@@ -55,16 +57,21 @@ class BDTieBa:
         for tb_name in tb_name_list:
             md5 = hashlib.md5(f"kw={tb_name}tbs={tbs}tiebaclient!!!".encode("utf-8")).hexdigest()
             data = {"kw": tb_name, "tbs": tbs, "sign": md5}
+            print("【{:}吧】:".format(tb_name),end= " ")
             try:
                 response = session.post(url="http://c.tieba.baidu.com/c/c/forum/sign", data=data).json()
                 if response["error_code"] == "0":
                     success_count += 1
+                    print("签到成功")
                 elif response["error_code"] == "160002":
                     exist_count += 1
+                    print("已经签到")
                 elif response["error_code"] == "340006":
                     shield_count += 1
+                    print("已经屏蔽")
                 else:
                     error_count += 1
+                    print("签到失败")
             except Exception as e:
                 print(f"贴吧 {tb_name} 签到异常,原因{str(e)}")
         msg = [
@@ -84,7 +91,7 @@ class BDTieBa:
             print(f"{cookie.get('name')} 开始签到...")
             self.cookie = cookie.get('cookie')
             try:
-                tieba_cookie = {item.split("=")[0]: item.split("=")[1] for item in self.cookie.split("; ")}
+                tieba_cookie = {item.split("=")[0]: item.split("=")[1] for item in self.cookie.split(";")}
                 session = requests.session()
                 requests.utils.add_dict_to_cookiejar(session.cookies, tieba_cookie)
                 session.headers.update({"Referer": "https://www.baidu.com/"})

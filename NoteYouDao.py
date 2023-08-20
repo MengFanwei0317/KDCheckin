@@ -7,6 +7,9 @@ new Env('有道云');
 import requests, time, sys, traceback
 from io import StringIO
 from KDconfig import getYmlConfig, send
+import os
+os.environ['NO_PROXY'] = 'note.youdao.com'
+
 
 class NoteYouDao:
     def __init__(self, cookie):
