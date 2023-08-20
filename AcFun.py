@@ -168,7 +168,7 @@ class AcFun:
                 if '=' in self.cookie:
                     cookies = {
                         item.split("=")[0]: item.split("=")[1]
-                        for item in self.cookie.split("; ")
+                        for item in self.cookie.split(";")
                     }
                 else:
                     cookies = ''
