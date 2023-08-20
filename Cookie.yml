@@ -27,7 +27,7 @@ AcFun:
         - user:
             name: ''
             # acPasstoken, auth_key
-            cookie: ''
+            cookie: '1;1'
 
 # 爱好论坛
 AiHao:
@@ -112,9 +112,9 @@ EnShan:
     send: 0
     cookies:
         - user:
-            name: ''
+            name: 'MengFanwei'
             # TWcq_2132_saltkey, TWcq_2132_auth
-            cookie: ''
+            cookie: 'TWcq_2132_saltkey=v26q6www;TWcq_2132_auth=5b19UlfZ08noMCMncF3uI3MBbgJ%2F91yZgix8ju8RzOw7dMGLPLNY4zjTSR8JrXz0d51LhgHnE8255ullizDv1gDkI14'
 
 # 葫芦侠
 HLX:

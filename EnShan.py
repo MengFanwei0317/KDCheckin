@@ -7,6 +7,8 @@ new Env('恩山论坛');
 import requests, re, traceback, sys
 from io import StringIO
 from KDconfig import getYmlConfig, send
+import os
+os.environ['NO_PROXY'] = 'www.right.com.cn'
 
 class EnShan:
     def __init__(self, cookie):

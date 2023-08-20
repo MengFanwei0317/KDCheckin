@@ -1,8 +1,8 @@
 # KD签到
 
-![GitHub issues](https://img.shields.io/github/issues/KD-happy/KDCheckin?logo=github) ![GitHub closed issues](https://img.shields.io/github/issues-closed-raw/KD-happy/KDCheckin?logo=github) ![GitHub forks](https://img.shields.io/github/forks/KD-happy/KDCheckin?logo=github) ![GitHub Repo stars](https://img.shields.io/github/stars/KD-happy/KDCheckin?logo=github)
+![GitHub issues](https://img.shields.io/github/issues/MengFanwei0317/KDCheckin?logo=github) ![GitHub closed issues](https://img.shields.io/github/issues-closed-raw/MengFanwei0317/KDCheckin?logo=github) ![GitHub forks](https://img.shields.io/github/forks/MengFanwei0317/KDCheckin?logo=github) ![GitHub Repo stars](https://img.shields.io/github/stars/MengFanwei0317/KDCheckin?logo=github)
 
-![GitHub last commit](https://img.shields.io/github/last-commit/KD-happy/KDCheckin?logo=github) ![GitHub commit activity](https://img.shields.io/github/commit-activity/y/KD-happy/KDCheckin?logo=github) ![GitHub repo size](https://img.shields.io/github/repo-size/KD-happy/KDCheckin?logo=github)
+![GitHub last commit](https://img.shields.io/github/last-commit/MengFanwei0317/KDCheckin?logo=github) ![GitHub commit activity](https://img.shields.io/github/commit-activity/y/MengFanwei0317/KDCheckin?logo=github) ![GitHub repo size](https://img.shields.io/github/repo-size/MengFanwei0317/KDCheckin?logo=github)
 
 ## 免责声明
 
@@ -17,8 +17,7 @@
 
 拉取本站
 ```shell
-ql repo https://github.com/KD-happy/KDCheckin.git "AiHao|DuoKan|QianDao|Weather|News" "" "KD"
-\cp -f /ql/data/repo/KD-happy_KDCheckin/*.py /ql/data/scripts/KD-happy_KDCheckin/KDsrc
+ql repo https://github.com/MengFanwei0317/KDCheckin.git "AiHao|DuoKan|QianDao|Weather|News" "" "KD"
 ```
 
 将配置文件复制到指定位置
@@ -26,13 +25,13 @@ ql repo https://github.com/KD-happy/KDCheckin.git "AiHao|DuoKan|QianDao|Weather|
 下面的是直接执行再服务器里面的，还要查看是否位置相同（映射到本地的位置）
 
 ```shell
-cp /ql/repo/KD-happy_KDCheckin/Cookie.yml /ql/config/Cookie.yml
+cp /ql/repo/MengFanwei0317_KDCheckin/Cookie.yml /ql/config/Cookie.yml
 ```
 
 不行就直接再qinglong里面执行下面的命令
 
 ```shell
-cp /ql/data/repo/KD-happy_KDCheckin/Cookie.yml /ql/data/config/Cookie.yml
+cp /ql/data/repo/MengFanwei0317_KDCheckin/Cookie.yml /ql/data/config/Cookie.yml
 ```
 
 ```shell
@@ -206,11 +205,11 @@ AcFun:
     - user: # <- 用户1
         name: 'xxx1' # <- 用户1名称（用来记录日志或发送通知的名称）
         # acPasstoken, auth_key # <- 关键cookie，必须有的cookie
-        cookie: 'acPasstoken=xxxxxxx; auth_key=xxxxxx'
+        cookie: 'acPasstoken=xxxxxxx;auth_key=xxxxxx'
     - user: # <- 用户2
         name: 'xxx2' # <- 用户2名称（用来记录日志或发送通知的名称）
         # acPasstoken, auth_key
-        cookie: 'acPasstoken=xxxxxxx; auth_key=xxxxxx'
+        cookie: 'acPasstoken=xxxxxxx;auth_key=xxxxxx'
 ```
 
 对应的json格式
@@ -223,13 +222,13 @@ AcFun:
       {
         "user": {
           "name": "xxx1",
-          "cookie": "acPasstoken=xxxxxxx; auth_key=xxxxxx"
+          "cookie": "acPasstoken=xxxxxxx;auth_key=xxxxxx"
         }
       },
       {
         "user": {
           "name": "xxx2",
-          "cookie": "acPasstoken=xxxxxxx; auth_key=xxxxxx"
+          "cookie": "acPasstoken=xxxxxxx;auth_key=xxxxxx"
         }
       }
     ]
